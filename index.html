@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="laviiiish's student portfolio, projects, study journey, and ways to connect.">
+  <title>FoxWebDot | laviiiish</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header" id="top">
+    <a class="brand" href="#top" aria-label="FoxWebDot home">FoxWebDot<span>.</span></a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="#about">About</a>
+      <a href="#study">Study</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="Switch color theme" title="Switch color theme">
+      <span class="theme-icon" aria-hidden="true">◐</span>
+      <span class="theme-label">Theme</span>
+    </button>
+  </header>
+
+  <main>
+    <section class="hero section-wrap">
+      <div class="hero-copy reveal">
+        <p class="eyebrow">Student / builder / curious mind</p>
+        <h1>Learning out loud.<br><em>Building with purpose.</em></h1>
+        <p class="hero-intro">I am <strong>laviiiish</strong>, a student exploring technology, design, and the ideas that make digital experiences feel human.</p>
+        <div class="hero-actions">
+          <a class="button button-dark" href="#projects">See my work <span aria-hidden="true">↘</span></a>
+          <a class="text-link" href="#contact">Let's talk <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+      <div class="hero-art reveal" aria-label="Interactive avatar illustration">
+        <div class="avatar-scene">
+          <div class="avatar-spark spark-one" aria-hidden="true"></div>
+          <div class="avatar-spark spark-two" aria-hidden="true"></div>
+          <div class="avatar">
+            <div class="avatar-antenna" aria-hidden="true"></div>
+            <div class="avatar-face">
+              <div class="avatar-eyes" aria-hidden="true">
+                <span class="avatar-eye"><i></i></span>
+                <span class="avatar-eye"><i></i></span>
+              </div>
+              <span class="avatar-mouth" aria-hidden="true"></span>
+            </div>
+            <div class="avatar-body" aria-hidden="true"><span></span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ticker" aria-label="Areas of interest">
+      <div class="ticker-shell">
+        <span class="ticker-label">Current focus</span>
+        <div class="ticker-window">
+          <div class="ticker-track"><span>Turning complex problems into simple designs</span><b aria-hidden="true">✦</b><span aria-hidden="true">Turning complex problems into simple designs</span><b aria-hidden="true">✦</b></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section section-wrap" id="about">
+      <div class="section-heading reveal"><p class="eyebrow">01 / About me</p><h2>A work in progress,<br><em>by design.</em></h2></div>
+      <div class="about-content reveal"><p class="lead">I like asking better questions before rushing to find answers. My work sits between thoughtful research, clear interfaces, and code that is easy to understand.</p><p>When I am not studying, I am usually sketching an idea, breaking down a complex problem, or learning from the people who use what I build. This portfolio is a living record of that process.</p><div class="fact-row"><div><strong>03+</strong><span>Projects shipped</span></div><div><strong>02</strong><span>Years learning</span></div><div><strong>∞</strong><span>Questions asked</span></div></div></div>
+    </section>
+
+    <section class="study-section" id="study">
+      <div class="section-wrap">
+        <div class="section-heading reveal"><p class="eyebrow">02 / Study log</p><h2>What I have<br><em>been learning.</em></h2></div>
+        <div class="study-list reveal">
+          <article class="study-item"><span class="study-number">01</span><div><h3>Web development</h3><p>HTML, CSS, JavaScript, responsive layouts, and accessible interfaces.</p></div><span class="study-status">In practice</span></article>
+          <article class="study-item"><span class="study-number">02</span><div><h3>Data & problem solving</h3><p>Python fundamentals, structured thinking, and turning messy questions into useful insights.</p></div><span class="study-status">Growing</span></article>
+          <article class="study-item"><span class="study-number">03</span><div><h3>Visual communication</h3><p>Typography, composition, user journeys, and making information easier to scan.</p></div><span class="study-status">Exploring</span></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section projects-section section-wrap" id="projects">
+      <div class="project-top section-heading reveal"><p class="eyebrow">03 / Selected projects</p><h2>Small steps,<br><em>real outcomes.</em></h2><div class="filters" role="group" aria-label="Filter projects"><button class="filter active" type="button" data-filter="all">All</button><button class="filter" type="button" data-filter="web">Web</button><button class="filter" type="button" data-filter="python">Python</button></div></div>
+      <div class="project-grid reveal">
+        <article class="project-card project-a" data-category="web"><div class="project-visual visual-a"><span>01 / WEB</span><i class="visual-sun"></i><strong>PORTFOLIO<br>STUDIO</strong></div><p class="project-type">Web / 2026</p><h3>Portfolio Studio</h3><p>A personal website system for sharing work, skills, and a learning journey.</p><a href="#contact" class="card-link" aria-label="Ask about Portfolio Studio">View project <span>↗</span></a></article>
+        <article class="project-card project-b" data-category="python"><div class="project-visual visual-b"><span>02 / PYTHON</span><i class="visual-sun"></i><strong>STUDY<br>TRACKER</strong></div><p class="project-type">Python / 2026</p><h3>Study Tracker</h3><p>A lightweight tracker that turns daily study sessions into useful progress.</p><a href="#contact" class="card-link" aria-label="Ask about Study Tracker">View project <span>↗</span></a></article>
+        <article class="project-card project-c" data-category="web"><div class="project-visual visual-c"><span>UI / WEB</span><i class="visual-sun"></i><strong>WEATHER<br>DESK</strong></div><p class="project-type">Web / 2025</p><h3>Weather Desk</h3><p>A simple weather interface focused on quick reading and calm decisions.</p><a href="#contact" class="card-link" aria-label="Ask about Weather Desk">View project <span>↗</span></a></article>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+      <div class="section-wrap contact-layout"><div class="contact-copy reveal"><p class="eyebrow">04 / Contact</p><h2>Have a good<br><em>question?</em></h2><p>Tell me what you are working on, learning, or wondering about. I would love to hear from you.</p><div class="contact-details"><a href="mailto:lavishkumar9548@gmail.com">lavishkumar9548@gmail.com</a><span>Saharanpur, Uttar Pradesh, India</span><span class="contact-note">Open to student projects and creative collaborations<br>Usually replies within 1-2 days</span></div></div><form class="contact-form reveal" id="contact-form"><label for="name">Your name</label><input id="name" name="name" type="text" placeholder="Enter name" required><label for="email">Your email</label><input id="email" name="email" type="email" placeholder="example@gmail.com" required><label for="message">Your message</label><textarea id="message" name="message" rows="4" placeholder="What are you thinking about?" required></textarea><button class="button button-light" type="submit">Send message <span aria-hidden="true">↗</span></button><p class="form-status" id="form-status" role="status"></p></form></div>
+    </section>
+  </main>
+
+  <footer class="site-footer section-wrap"><span>© 2026 laviiiish</span><a href="#top">FoxWebDot ↑</a><span>Made with curiosity.</span></footer>
+  <script src="script.js"></script>
+</body>
+</html>
