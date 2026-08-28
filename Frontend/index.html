@@ -1,1 +1,25 @@
-<html><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="description" content="Lavish Kumar - developer portfolio and learning notes" /><title>Lavish Kumar | Developer</title></head><body><div id="root"></div><script type="module" src="/src/main.jsx"></script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="description" content="Lavish Kumar - developer portfolio and learning notes" />
+	<title>Lavish Kumar | Developer</title>
+	<link rel="stylesheet" href="/src/styles.css" />
+</head>
+<body>
+	<header class="nav"><a class="brand" href="#home">LK<span>.</span></a><button class="menu" id="menuButton">☰</button><nav id="navLinks"><a href="#home">home</a><a href="#about">about</a><a href="#projects">projects</a><a href="#notes">notes</a><a href="#contact">contact</a><button class="login-btn" id="loginButton">Login</button></nav></header>
+	<main>
+		<section id="home" class="hero"><div class="hero-copy"><p class="kicker">DEVELOPER • BUILDER • LEARNER</p><h1>Ideas become<br><em>useful things.</em></h1><p class="lead">Hi, I’m Lavish Kumar. I build clear, curious digital experiences and share what I learn along the way.</p><div class="actions"><a class="button primary" href="#projects">See my work ↗</a><a class="text-link" href="#contact">Let’s talk ↗</a></div></div><div class="hero-art"><div class="stamp">MAKE<br>IT<br><strong>REAL</strong></div><div class="code-card"><span>&lt;hello world /&gt;</span><br><b>const</b> curiosity = true;<br><b>build</b>(somethingUseful);</div></div></section>
+		<section id="about" class="about section"><div class="section-label">01 / ABOUT</div><div><h2>A developer with a<br><span>builder’s mindset.</span></h2><p>I enjoy making websites that feel human: easy to understand, pleasant to use, and built with enough care under the hood to last. This space is where I keep my work, notes, and an open door for good questions.</p><div class="facts"><div><strong>01</strong><small>Curious by default</small></div><div><strong>02</strong><small>Learning in public</small></div><div><strong>03</strong><small>Building with care</small></div></div></div></section>
+		<section id="projects" class="section projects"><div class="section-head"><div class="section-label">02 / SELECTED WORK</div><h2>Things I’ve <span>made.</span></h2></div><div class="project-grid" id="projectGrid"></div></section>
+		<section id="notes" class="notes section"><div class="section-label">03 / STUDY ROOM</div><div class="notes-intro"><h2>Notes for the<br><span>next version.</span></h2><p>New chapters uploaded from the admin panel will appear in their matching subject automatically.</p></div><div class="note-tabs"><button class="active" data-tab="HTML">▣ HTML NOTES</button><button data-tab="CSS">▣ CSS NOTES</button><button data-tab="JavaScript">▣ JAVASCRIPT NOTES</button></div><div class="note-list" id="noteList"></div></section>
+		<section class="forms section"><div class="form-box"><div class="section-label">04 / ASK A QUESTION</div><h2>Stuck on something?<br><span>Send it over.</span></h2><p>Login to attach a PDF or screenshot with your doubt.</p><div id="doubtArea"><button class="button primary" id="doubtLogin">Login to ask →</button></div></div><div id="contact" class="form-box dark"><div class="section-label">05 / CONTACT</div><h2>Have a thought?<br><span>Say hello.</span></h2><form data-endpoint="messages"><input required name="firstName" placeholder="Your name"><input required type="email" name="email" placeholder="Email address"><textarea required name="description" placeholder="Your message"></textarea><button class="button light">Send message →</button></form></div></section>
+		<section class="feedback section"><div><div class="section-label">06 / FEEDBACK</div><h2>Help me make this<br><span>space better.</span></h2></div><form data-endpoint="feedback"><input required name="firstName" placeholder="Your name"><textarea required name="description" placeholder="What did you think?"></textarea><button class="button outline">Share feedback →</button></form></section>
+	</main>
+	<footer><span>© 2026 Lavish Kumar</span><a href="#home">Back to top ↑</a><a href="https://github.com/lavishhkumar/FOXWEB" target="_blank">GitHub ↗</a></footer>
+	<div class="toast" id="toast"></div>
+	<div class="modal-backdrop" id="authModal" hidden><div class="modal"><button class="close" id="closeModal">×</button><div class="section-label">WELCOME</div><h2>Login to continue.</h2><form id="authForm"><input required name="name" placeholder="Full name"><input required type="email" placeholder="Email address"><input required type="password" placeholder="Password"><button class="button primary">Login →</button></form><p class="switch">Authentication will connect after Supabase setup.</p></div></div>
+	<script type="module" src="/src/app.js"></script>
+</body>
+</html>
