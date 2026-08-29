@@ -3,6 +3,7 @@
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body { margin: 0; color: var(--ink); background: var(--paper); font-family: var(--sans); font-size: 16px; line-height: 1.5; }
+html, body { overflow-x: hidden; max-width: 100%; }
 html, body, a, button, input, textarea, select { -webkit-tap-highlight-color: transparent; -webkit-touch-callout: none; }
 a, button, input, textarea, select { touch-action: manipulation; }
 .back-to-top { position: fixed; z-index: 20; right: 24px; bottom: 24px; display: grid; place-items: center; width: 48px; height: 48px; padding: 0; color: var(--paper); background: var(--ink); border: 1px solid var(--ink); border-radius: 50%; font: 20px var(--sans); cursor: pointer; opacity: 0; visibility: hidden; transform: translateY(14px); transition: opacity .25s ease, visibility .25s ease, transform .25s ease, background .2s ease; }
@@ -46,7 +47,7 @@ h1, h2, h3, p { margin-top: 0; } h1, h2 { font-weight: 700; letter-spacing: -3px
 /* Contact and footer CSS end */
 /* Theme and mobile CSS start */
 body.warm { --paper: #e5f5fb; --mint: #c5e6f2; --coral: #3e8fb8; --yellow: #a8dff0; }
-@media (max-width: 760px) { .section-wrap, .site-header { width: min(100% - 36px, 600px); }.site-header { height: 72px; }.main-nav { gap: 12px; font-size: 9px; }.theme-label { display: none; }.hero, .content-section, .study-section .section-wrap, .contact-layout { grid-template-columns: 1fr; gap: 48px; }.hero { padding-block: 70px 85px; }.hero-art { min-height: 330px; width: calc(100% - 12px); margin: auto; }.profile-stamp { top: 43px; left: 43px; width: 145px; height: 145px; }.content-section, .study-section { padding-block: 85px; }.project-top { grid-template-columns: 1fr; gap: 25px; }.project-grid { grid-template-columns: 1fr; }.project-card { min-height: 385px; }.study-item { grid-template-columns: 35px 1fr; }.study-status { grid-column: 2; }.contact-section { padding-block: 85px; }.site-footer { flex-wrap: wrap; } }
+@media (max-width: 760px) { .section-wrap, .site-header { width: calc(100% - 36px); max-width: 600px; }.site-header { height: 72px; }.main-nav { gap: 12px; font-size: 9px; }.theme-label { display: none; }.hero, .content-section, .study-section .section-wrap, .contact-layout { grid-template-columns: 1fr; gap: 48px; }.hero { padding-block: 70px 85px; }.hero-art { min-height: 330px; width: calc(100% - 12px); margin: auto; }.profile-stamp { top: 43px; left: 43px; width: 145px; height: 145px; }.content-section, .study-section { padding-block: 85px; }.project-top { grid-template-columns: 1fr; gap: 25px; }.project-grid { grid-template-columns: 1fr; }.project-card { width: 100%; min-height: 385px; }.study-item { grid-template-columns: 35px 1fr; }.study-status { grid-column: 2; }.contact-section { padding-block: 85px; }.site-footer { flex-wrap: wrap; } }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; }.reveal { animation: none; }.button { transition: none; } }
 /* Theme and mobile CSS end */
 
@@ -106,10 +107,10 @@ body { background: var(--paper); background-image: radial-gradient(rgba(18,50,74
 .contact-form input:-webkit-autofill, .contact-form input:-webkit-autofill:hover, .contact-form input:-webkit-autofill:focus { -webkit-text-fill-color: var(--paper); -webkit-box-shadow: 0 0 0 1000px var(--ink) inset; box-shadow: 0 0 0 1000px var(--ink) inset; transition: background-color 9999s ease-out; }
 .contact-note { color: #8eb6c8; font-size: 11px; line-height: 1.7; }
 @media (max-width: 760px) {
-	.site-header { width: calc(100% - 24px); height: 64px; margin-top: 12px; padding-inline: 10px; border-radius: 999px; }
+	.site-header { width: calc(100% - 24px); max-width: 600px; height: 64px; margin-top: 12px; padding-inline: 10px; border-radius: 999px; }
 	.main-nav { gap: 9px; padding: 8px 10px; }
 	.ticker { padding-block: 8px 24px; }
-	.ticker-shell { width: calc(100% - 36px); min-height: 62px; gap: 12px; padding: 8px 10px 8px 14px; }
+	.ticker-shell { width: calc(100% - 36px); max-width: 600px; min-height: 62px; gap: 12px; padding: 8px 10px 8px 14px; }
 	.ticker-label { padding: 8px 10px; font-size: 8px; }
 	.ticker-track { gap: 18px; font-size: 11px; }
 	.hero::before, .content-section::after { display: none; }
