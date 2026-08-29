@@ -3,6 +3,8 @@
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body { margin: 0; color: var(--ink); background: var(--paper); font-family: var(--sans); font-size: 16px; line-height: 1.5; }
+html, body, a, button, input, textarea, select { -webkit-tap-highlight-color: transparent; -webkit-touch-callout: none; }
+a, button, input, textarea, select { touch-action: manipulation; }
 .back-to-top { position: fixed; z-index: 20; right: 24px; bottom: 24px; display: grid; place-items: center; width: 48px; height: 48px; padding: 0; color: var(--paper); background: var(--ink); border: 1px solid var(--ink); border-radius: 50%; font: 20px var(--sans); cursor: pointer; opacity: 0; visibility: hidden; transform: translateY(14px); transition: opacity .25s ease, visibility .25s ease, transform .25s ease, background .2s ease; }
 .back-to-top.visible { opacity: 1; visibility: visible; transform: translateY(0); }
 .back-to-top:hover { color: var(--ink); background: var(--coral); }
