@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Track study sessions by date, subject, and time.">
+  <title>Study Tracker | FoxWebDot</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="portfolio-studio.css">
+  <link rel="stylesheet" href="study-tracker.css">
+</head>
+<body class="project-page">
+  <header class="site-header" id="top">
+    <a class="brand" href="index.html" aria-label="FoxWebDot home">FoxWebDot<span>.</span></a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="index.html#top">Home</a>
+      <a href="index.html#study">Study</a>
+      <a href="index.html#projects">Projects</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="Switch color theme" title="Switch color theme">
+      <span class="theme-icon" aria-hidden="true">◐</span>
+      <span class="theme-label">Theme</span>
+    </button>
+  </header>
+
+  <main class="tracker-page section-wrap">
+    <a class="back-link" href="index.html#projects">← Back to projects</a>
+    <section class="tracker-heading" aria-labelledby="tracker-title">
+      <p class="eyebrow">Project 02 / Study log</p>
+      <h1 id="tracker-title">Study<br><em>Tracker.</em></h1>
+      <p class="tracker-intro">Your sessions, one clear timeline.</p>
+    </section>
+
+    <section class="tracker-content" aria-label="Study session tracker">
+      <section class="entry-section" aria-labelledby="entry-title">
+        <div class="section-title-row">
+          <div>
+            <p class="eyebrow">New entry</p>
+            <h2 id="entry-title">Log a session</h2>
+          </div>
+          <span class="entry-mark" aria-hidden="true">＋</span>
+        </div>
+        <form class="session-form" id="session-form">
+          <div class="form-field">
+            <label for="study-date">Date</label>
+            <input id="study-date" name="date" type="date" required>
+          </div>
+          <div class="form-field">
+            <label for="study-day">Day</label>
+            <input id="study-day" name="day" type="text" placeholder="Select a date" readonly>
+          </div>
+          <div class="form-field">
+            <label for="study-subject">Subject</label>
+            <select id="study-subject" name="subject" required>
+              <option value="">Choose a subject</option>
+              <option>Mathematics</option>
+              <option>Science</option>
+              <option>English</option>
+              <option>Computer Science</option>
+              <option>History</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="study-topic">Subject name / topic</label>
+            <input id="study-topic" name="topic" type="text" maxlength="80" placeholder="e.g. Quadratic equations" required>
+          </div>
+          <div class="time-fields">
+            <div class="form-field">
+              <label for="start-time">Start time</label>
+              <input id="start-time" name="startTime" type="time" required>
+            </div>
+            <div class="form-field">
+              <label for="end-time">End time</label>
+              <input id="end-time" name="endTime" type="time" required>
+            </div>
+          </div>
+          <p class="form-message" id="form-message" role="status"></p>
+          <button class="save-button" type="submit">Save session <span aria-hidden="true">↗</span></button>
+        </form>
+      </section>
+
+      <section class="saved-sessions" aria-labelledby="sessions-title">
+        <div class="section-title-row">
+          <div>
+            <p class="eyebrow">Your record</p>
+            <h2 id="sessions-title">Study sessions</h2>
+          </div>
+          <div class="session-tools">
+            <span class="session-count" id="session-count">0 sessions</span>
+            <button class="bulk-button select-all-button" id="select-all-button" type="button">Delete all</button>
+            <div class="bulk-actions" id="bulk-actions" hidden>
+              <button class="bulk-button delete-selected-button" id="delete-selected-button" type="button" disabled>Delete selected (0)</button>
+              <button class="bulk-button cancel-selection-button" id="cancel-selection-button" type="button">Cancel</button>
+            </div>
+          </div>
+        </div>
+        <p class="empty-state" id="empty-state">No sessions saved yet.</p>
+        <ol class="session-list" id="session-list" aria-live="polite"></ol>
+      </section>
+    </section>
+  </main>
+
+  <footer class="site-footer section-wrap"><span>© 2026 laviiiish</span><a href="#top">FoxWebDot ↑</a><span>Made with curiosity.</span></footer>
+  <button class="back-to-top" type="button" aria-label="Back to top" title="Back to top">↑</button>
+  <script src="script.js"></script>
+  <script src="study-tracker.js"></script>
+</body>
+</html>
