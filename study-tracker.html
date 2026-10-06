@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="study-tracker.css">
 </head>
 <body class="project-page">
+  <!-- Header and account controls code start -->
   <header class="site-header" id="top">
     <a class="brand" href="index.html" aria-label="FoxWebDot home">FoxWebDot<span>.</span></a>
     <nav class="main-nav" aria-label="Main navigation">
@@ -24,9 +25,165 @@
       <span class="theme-icon" aria-hidden="true">◐</span>
       <span class="theme-label">Theme</span>
     </button>
+    <div class="account-controls">
+      <button class="profile-trigger" id="profile-trigger" type="button" aria-label="Open your profile" aria-haspopup="dialog" aria-controls="profile-dialog" hidden>
+        <span class="avatar-circle avatar-circle--header">
+          <img id="header-avatar-image" alt="" hidden>
+          <span id="header-avatar-initials">S</span>
+        </span>
+        <span class="account-name" id="account-name"></span>
+      </button>
+      <button class="logout-button" id="logout-button" type="button" hidden>Log out</button>
+    </div>
   </header>
+  <!-- Header and account controls code end -->
 
-  <main class="tracker-page section-wrap">
+  <!-- Login and registration code start -->
+  <main class="auth-screen section-wrap" id="auth-screen">
+    <section class="auth-panel" aria-labelledby="auth-title">
+      <div class="auth-intro">
+        <p class="eyebrow">Project 02 / Study log</p>
+        <h1 id="auth-title">Your study<br><em>space.</em></h1>
+        <p>Sign in to keep your sessions together, or create a demo account to get started.</p>
+      </div>
+
+      <div class="auth-tabs" role="tablist" aria-label="Account options">
+        <button class="auth-tab active" id="login-tab" type="button" role="tab" aria-selected="true" aria-controls="login-form" data-auth-mode="login">Log in</button>
+        <button class="auth-tab" id="register-tab" type="button" role="tab" aria-selected="false" aria-controls="register-form" data-auth-mode="register">Register</button>
+      </div>
+
+      <form class="auth-form" id="login-form" aria-labelledby="login-tab">
+        <div class="auth-field">
+          <label for="login-email">Email</label>
+          <input id="login-email" name="email" type="email" autocomplete="username" placeholder="you@example.com" required>
+        </div>
+        <div class="auth-field">
+          <label for="login-password">Password</label>
+          <input id="login-password" name="password" type="password" autocomplete="current-password" placeholder="Your demo password" required>
+        </div>
+        <p class="auth-message" id="login-message" role="status"></p>
+        <button class="auth-submit" type="submit">Log in <span aria-hidden="true">↗</span></button>
+      </form>
+
+      <form class="auth-form" id="register-form" aria-labelledby="register-tab" hidden>
+        <div class="auth-field">
+          <label for="register-first-name">First name</label>
+          <input id="register-first-name" name="firstName" type="text" autocomplete="given-name" maxlength="40" placeholder="First name" required>
+        </div>
+        <div class="auth-field">
+          <label for="register-last-name">Last name</label>
+          <input id="register-last-name" name="lastName" type="text" autocomplete="family-name" maxlength="50" placeholder="Last name" required>
+        </div>
+        <div class="auth-field">
+          <label for="register-email">Email</label>
+          <input id="register-email" name="email" type="email" autocomplete="username" placeholder="you@example.com" required>
+        </div>
+        <div class="auth-field">
+          <label for="register-mobile">Mobile number</label>
+          <input id="register-mobile" name="mobile" type="tel" autocomplete="tel" maxlength="20" placeholder="Your mobile number" required>
+        </div>
+        <div class="auth-field">
+          <label for="register-course">Course</label>
+          <input id="register-course" name="course" type="text" maxlength="60" placeholder="e.g. Computer Science" required>
+        </div>
+        <div class="auth-field">
+          <label for="register-class">Class / year</label>
+          <input id="register-class" name="studyClass" type="text" maxlength="40" placeholder="e.g. Class 12 or Year 2" required>
+        </div>
+        <div class="auth-field">
+          <label for="register-password">Create password</label>
+          <input id="register-password" name="password" type="password" autocomplete="new-password" minlength="4" placeholder="At least 4 characters" required>
+        </div>
+        <p class="auth-message" id="register-message" role="status"></p>
+        <button class="auth-submit" type="submit">Create demo account <span aria-hidden="true">↗</span></button>
+      </form>
+
+      <p class="demo-note">Demo only: account details and study sessions are stored in this browser and are not protected by a server.</p>
+    </section>
+  </main>
+  <!-- Login and registration code end -->
+
+  <!-- Editable profile dialog code start -->
+  <dialog class="profile-dialog" id="profile-dialog" aria-labelledby="profile-title">
+    <section class="profile-panel">
+      <header class="profile-heading">
+        <div>
+          <p class="eyebrow">Account settings</p>
+          <h2 id="profile-title">Your profile</h2>
+        </div>
+        <button class="profile-close" id="profile-close" type="button" aria-label="Close profile">×</button>
+      </header>
+
+      <form class="profile-form" id="profile-form">
+        <div class="photo-editor">
+          <span class="avatar-circle avatar-circle--large">
+            <img id="profile-avatar-image" alt="Profile photo preview" hidden>
+            <span id="profile-avatar-initials">S</span>
+          </span>
+          <div class="photo-actions">
+            <label class="photo-upload" for="profile-photo">Choose profile photo</label>
+            <input id="profile-photo" type="file" accept="image/*" hidden>
+            <button class="photo-remove" id="remove-photo" type="button">Remove photo</button>
+            <span class="photo-hint">Image is resized and stored in this browser.</span>
+          </div>
+        </div>
+
+        <div class="profile-fields">
+          <div class="auth-field">
+            <label for="profile-first-name">First name</label>
+            <input id="profile-first-name" name="firstName" type="text" autocomplete="given-name" maxlength="40" required>
+          </div>
+          <div class="auth-field">
+            <label for="profile-last-name">Last name</label>
+            <input id="profile-last-name" name="lastName" type="text" autocomplete="family-name" maxlength="50" required>
+          </div>
+          <div class="auth-field profile-field-wide">
+            <label for="profile-email">Email</label>
+            <input id="profile-email" name="email" type="email" autocomplete="email" required>
+          </div>
+          <div class="auth-field profile-field-wide">
+            <label for="profile-mobile">Mobile number</label>
+            <input id="profile-mobile" name="mobile" type="tel" autocomplete="tel" maxlength="20" required>
+          </div>
+          <div class="auth-field">
+            <label for="profile-course">Course</label>
+            <input id="profile-course" name="course" type="text" maxlength="60" required>
+          </div>
+          <div class="auth-field">
+            <label for="profile-class">Class / year</label>
+            <input id="profile-class" name="studyClass" type="text" maxlength="40" required>
+          </div>
+        </div>
+
+        <fieldset class="password-fields">
+          <legend>Change password</legend>
+          <p>Leave these fields empty to keep your current password.</p>
+          <div class="profile-fields">
+            <div class="auth-field profile-field-wide">
+              <label for="current-password">Current password</label>
+              <input id="current-password" name="currentPassword" type="password" autocomplete="current-password">
+            </div>
+            <div class="auth-field">
+              <label for="new-password">New password</label>
+              <input id="new-password" name="newPassword" type="password" autocomplete="new-password" minlength="4">
+            </div>
+            <div class="auth-field">
+              <label for="confirm-password">Confirm new password</label>
+              <input id="confirm-password" name="confirmPassword" type="password" autocomplete="new-password" minlength="4">
+            </div>
+          </div>
+        </fieldset>
+
+        <p class="auth-message" id="profile-message" role="status"></p>
+        <button class="auth-submit" type="submit">Update profile <span aria-hidden="true">↗</span></button>
+        <button class="delete-account" id="delete-account" type="button">Delete account</button>
+      </form>
+    </section>
+  </dialog>
+  <!-- Editable profile dialog code end -->
+
+  <!-- Study session tracker code start -->
+  <main class="tracker-page section-wrap" id="tracker-app" hidden>
     <a class="back-link" href="index.html#projects">← Back to projects</a>
     <section class="tracker-heading" aria-labelledby="tracker-title">
       <p class="eyebrow">Project 02 / Study log</p>
@@ -103,9 +260,14 @@
       </section>
     </section>
   </main>
+  <!-- Study session tracker code end -->
 
+  <!-- Footer and page controls code start -->
   <footer class="site-footer section-wrap"><span>© 2026 laviiiish</span><a href="#top">FoxWebDot ↑</a><span>Made with curiosity.</span></footer>
   <button class="back-to-top" type="button" aria-label="Back to top" title="Back to top">↑</button>
+  <!-- Footer and page controls code end -->
+
+  <!-- Shared and tracker scripts -->
   <script src="script.js"></script>
   <script src="study-tracker.js"></script>
 </body>
